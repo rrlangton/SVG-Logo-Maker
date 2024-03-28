@@ -11,7 +11,10 @@ In the command-line, users will be prompted to reply to the following:
         Enter a color for the shape:
 
 ## Installation
-To install, you should clone this repo to your local device. Then, navigate to that repository and install the necessary packages using "npm install && npm start" in the command-line in, the terminal. Now, you are ready to run the program and generate a custom logo. 
+To install, you should clone this repo to your local device. Then, navigate to that repository and install the necessary packages using "npm install && npm start", in the terminal. Now, you are ready to run the program and generate a custom logo. 
+
+## Walkthrough Video
+
 
 ## Sources
 28-Stu_Mini-Project, 

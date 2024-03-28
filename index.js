@@ -65,17 +65,8 @@ inquirer
             // console.log(newLogo2.renderCode())
 
             fs.writeFile("./examples/result.svg", logoCode)
-            // Define a callback function
-            const callback = (err) => {
-              if (err) {
-                console.error('Error writing file:', err);
-              } else {
-                console.log('File written successfully');
-              }
-            };
-            // Call writeFile with the callback function
-            fs.writeFile('example.txt', 'Hello, Node!', callback);
-      })
+          })
+
       .catch((err) => {
         console.log(err);
         console.log('Oops. Something went wrong.');
