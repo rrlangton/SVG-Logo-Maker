@@ -1,17 +1,23 @@
 const inquirer = require('inquirer');
 const fs = require("fs")
 const Logo = require("./lib/logo")
-const Shape = require("./lib/shapes")
+const Circle = require("./lib/shapes")
+const Triangle = require("./lib/shapes")
+const Square = require("./lib/shapes")
 const Text = require("./lib/text")
-
 
 inquirer
       .prompt([
         {
           type: 'input',
           name: 'text',
-          message: 'Enter text less than 3 characters',
-        },
+          message: 'Enter text less than 4 characters',
+          validate: function(value) {
+            if (value.length <= 4) {
+              return true;
+            }
+            return 'Please enter text with less than 4 characters.';    
+        }},
         {
           type: 'input',
           name: 'textColor',
@@ -26,15 +32,28 @@ inquirer
         {
           type: 'input',
           name: 'shapeColor',
-          message: 'Enter a color for the shape',
+        message: 'Enter a color for the shape',
         }
       ])
 
       .then((answers) => { 
             console.log(answers);
 
-            const newShape = new Shape(answers.shapeColor);
-            
+            let newShape;
+            switch (answers.logoShape) {
+              case "circle":
+                newShape = new Circle(answers.shapeColor);
+                break;
+              case "triangle":
+                newShape = new Triangle(answers.shapeColor);
+                break;
+              case "square":
+                newShape = new Square(answers.shapeColor);
+                break;
+              default:
+                console.log("Invalid shape selection.");
+            }
+
             const newText = new Text(answers.text, answers.textColor)
             
             const newLogo1 = new Logo(newText, newShape);
@@ -46,7 +65,16 @@ inquirer
             // console.log(newLogo2.renderCode())
 
             fs.writeFile("./examples/result.svg", logoCode)
-
+            // Define a callback function
+            const callback = (err) => {
+              if (err) {
+                console.error('Error writing file:', err);
+              } else {
+                console.log('File written successfully');
+              }
+            };
+            // Call writeFile with the callback function
+            fs.writeFile('example.txt', 'Hello, Node!', callback);
       })
       .catch((err) => {
         console.log(err);
