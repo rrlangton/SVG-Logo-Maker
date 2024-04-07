@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require("fs");
-const Logo = require("./lib/logo");
-const Circle = require("./lib/shapes");
-const Triangle = require("./lib/shapes");
-const Square = require("./lib/shapes");
-const Text = require("./lib/text");
+const Logo = require("./lib/logo.js");
+const Circle = require("./lib/circle.js");
+const Triangle = require("./lib/triangle.js");
+const Square = require("./lib/square.js");
+const Text = require("./lib/text.js");
 
 inquirer.prompt([
     {
