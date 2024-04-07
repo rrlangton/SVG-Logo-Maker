@@ -15,6 +15,7 @@ To install, you should clone this repo to your local device. Then, navigate to t
 
 ## Walkthrough Video
 
+https://app.screencastify.com/v3/watch/za40LpXmisuXoTcTJbbz
 
 ## Sources
 28-Stu_Mini-Project, 
